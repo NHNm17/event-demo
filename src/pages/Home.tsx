@@ -45,6 +45,7 @@ const cardVariants: Variants[] = [
 
 const Home = () => {
   return (
+    <div className="min-h-screen bg-background">
     <main className="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,hsl(24_95%_94%),transparent_36%),radial-gradient(circle_at_bottom_right,hsl(199_92%_92%),transparent_30%),linear-gradient(180deg,hsl(40_50%_98%),hsl(40_35%_95%))] text-foreground">
       <HeroSection />
       <section className="relative mx-auto flex min-h-screen w-full max-w-7xl items-center px-4 py-10 sm:px-6 lg:px-8">
@@ -103,6 +104,31 @@ const Home = () => {
         </div>
       </section>
     </main>
+    <footer className="py-8 border-t border-border/50 bg-card/50">
+        <div className="container mx-auto px-4 text-center space-y-2">
+            
+            <p className="text-sm text-muted-foreground font-light">
+            The Wedding of | Mr ❤︎ Mrs
+            </p>
+
+            {/* Created By */}
+            <Link
+                to="https://www.antwix.lk"
+                className="underline underline-offset-4 hover:text-foreground transition-colors"
+            >
+            <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+            <span>Developed By:</span>
+            <img
+                src="/logo-removebg.png"
+                alt="Company Logo"
+                className="h-10 w-10 opacity-80"
+            />
+            </div>
+            </Link>
+        </div>
+    </footer>
+    </div>
+    
   );
 };
 

@@ -81,8 +81,7 @@ const Homecoming = () => {
           </TabsContent>
         </Tabs>
       </main>
-
-      {/* Footer */}
+      
       {/* Footer */}
       <footer className="py-8 border-t border-border/50 bg-card/50">
   <div className="container mx-auto px-4 text-center space-y-2">
