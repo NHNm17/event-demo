@@ -6,21 +6,21 @@ import HeroSection from "@/components/HeroSection";
 const primaryButtons = [
   {
     title: "Wedding",
-    description: "Enter the wedding upload and gallery experience.",
+    description: "Open the wedding photo uploader and share your wedding day experience.",
     to: "/wedding",
     icon: Heart,
     accent: "from-rose-500 via-rose-400 to-orange-300",
   },
   {
     title: "Homecoming",
-    description: "Open the homecoming photo uploader and gallery.",
+    description: "Open the homecoming photo uploader and share your homecoming day experience.",
     to: "/homecoming",
     icon: Camera,
     accent: "from-sky-500 via-cyan-400 to-emerald-300",
   },
   {
     title: "Thank You Card",
-    description: "Generate a placeholder thank-you card page.",
+    description: "Generate your own Thank You card.",
     to: "/thank-you-card",
     icon: Sparkles,
     accent: "from-amber-500 via-yellow-400 to-orange-300",
