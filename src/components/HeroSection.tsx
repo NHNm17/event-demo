@@ -11,7 +11,7 @@ const HeroSection = ({ tableNumber }: HeroSectionProps) => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-center bg-cover scale-105 blur-none"
-        style={{ backgroundImage: "url('/HERO-BG.jpg')" }}
+        style={{ backgroundImage: "url('/hero.jpg')" }}
       />
 
       {/* White Overlay for readability */}
@@ -41,10 +41,10 @@ const HeroSection = ({ tableNumber }: HeroSectionProps) => {
         {/* Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display text-foreground mb-4 tracking-tight">
           <span className="block text-[20px] font-semibold uppercase tracking-[7px]">
-            THE HOMECOMING OF
+            THE EVENT OF
           </span>
           <span className="block text-gradient-red/50 italic font-[cursive] font-semibold drop-shadow-sm">
-            Adisha &amp; Deshani
+            Mr &amp; Mrs
           </span>
         </h1>
 

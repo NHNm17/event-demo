@@ -95,26 +95,23 @@ const Wedding = () => {
   <div className="container mx-auto px-4 text-center space-y-2">
     
     <p className="text-sm text-muted-foreground font-light">
-      03rd Jan 2026 | Adisha ❤︎ Deshani
+      03rd Jan 2026 | Mr ❤︎ Mrs
     </p>
 
     {/* Created By */}
-    <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
-      <span>Created By:</span>
-      <img
-        src="/company-logo-h.jpg"
-        alt="Company Logo"
-        className="h-5 w-auto opacity-80"
-      />
-      <span className="mx-1">|</span>
-
-      <Link
-        to="/more-details"
+    <Link
+        to="https://www.antwix.lk"
         className="underline underline-offset-4 hover:text-foreground transition-colors"
       >
-        more details
-      </Link>
+    <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+      <span>Developed By:</span>
+      <img
+        src="/logo-removebg.png"
+        alt="Company Logo"
+        className="h-10 w-10 opacity-80"
+      />
     </div>
+    </Link>
   </div>
 </footer>
 
