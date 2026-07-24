@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 50% 97%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 32% 92%;
+    --secondary-foreground: 222 47% 16%;
+
+    --muted: 40 25% 94%;
+    --muted-foreground: 215 16% 46%;
+
+    --accent: 38 92% 90%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 25% 88%;
+    --input: 30 25% 90%;
+    --ring: 24 95% 53%;
+
+    --radius: 0.75rem;
+
+    --blue: 24 95% 53%;
+    --blue-light: 24 90% 65%;
+    --blue-dark: 24 90% 42%;
+    --white: 0 0% 100%;
+    --white-soft: 40 50% 97%;
+    --sky: 199 89% 85%;
+    --navy: 222 47% 11%;
+
+    --gradient-blue: linear-gradient(135deg, hsl(24 95% 53%), hsl(38 92% 50%));
+    --gradient-white: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 50% 97%));
+    --gradient-shimmer: linear-gradient(90deg, transparent, hsl(24 95% 70% / 0.3), transparent);
+
+    --shadow-soft: 0 4px 20px hsl(222 47% 11% / 0.08);
+    --shadow-elegant: 0 8px 30px hsl(222 47% 11% / 0.12);
+    --shadow-glow: 0 0 40px hsl(24 95% 53% / 0.18);
+
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 215 25% 25%;
+    --sidebar-primary: 215 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 30% 94%;
+    --sidebar-accent-foreground: 215 25% 25%;
+    --sidebar-border: 210 30% 88%;
+    --sidebar-ring: 215 70% 45%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 40 50% 96%;
+
+    --card: 222 40% 12%;
+    --card-foreground: 40 50% 96%;
+
+    --popover: 222 40% 10%;
+    --popover-foreground: 40 50% 96%;
+
+    --primary: 24 95% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 25% 18%;
+    --secondary-foreground: 40 50% 96%;
+
+    --muted: 222 20% 18%;
+    --muted-foreground: 40 10% 68%;
+
+    --accent: 24 65% 28%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 222 18% 22%;
+    --input: 222 18% 22%;
+    --ring: 24 95% 60%;
+
+    --blue: 24 95% 60%;
+    --blue-light: 24 80% 70%;
+    --blue-dark: 24 70% 35%;
+    --white: 222 47% 12%;
+    --white-soft: 222 40% 10%;
+    --sky: 199 48% 28%;
+    --navy: 222 47% 11%;
+
+    --sidebar-background: 220 18% 12%;
+    --sidebar-foreground: 210 30% 90%;
+    --sidebar-primary: 215 65% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 20%;
+    --sidebar-accent-foreground: 210 30% 90%;
+    --sidebar-border: 220 15% 25%;
+    --sidebar-ring: 215 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background-image: radial-gradient(circle at top, hsl(38 92% 93% / 0.8), transparent 42%), radial-gradient(circle at bottom right, hsl(199 89% 88% / 0.45), transparent 30%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient-blue {
+    background: linear-gradient(135deg, hsl(24 95% 53%), hsl(38 92% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-blue {
+    background: linear-gradient(135deg, hsl(24 95% 53%), hsl(38 92% 50%));
+  }
+
+  .bg-gradient-white {
+    background: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 50% 97%));
+  }
+
+  .bg-blue-light {
+    background-color: hsl(24 90% 65%);
+  }
+
+  .shadow-elegant {
+    box-shadow: 0 8px 30px hsl(222 47% 11% / 0.12);
+  }
+
+  .shadow-glow-blue {
+    box-shadow: 0 0 40px hsl(24 95% 53% / 0.18);
+  }
+}
+
+@layer components {
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+    background-size: 200% 100%;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
