@@ -39,11 +39,11 @@ const Wedding = () => {
       {/* Navigation to Homecoming */}
       <div className="flex justify-center py-4">
         <Link
-          to="/homecoming"
+          to="/"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-red-400 text-red-700 hover:bg-red-50 transition-all duration-300 font-medium"
         >
           <Home className="w-4 h-4" />
-          View Homecoming Day Uploader
+          Back to Home
         </Link>
       </div>
 

@@ -41,7 +41,7 @@ const Homecoming = () => {
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-blue/50 text-blue hover:bg-blue/5 transition-all duration-300 font-medium"
         >
           <Heart className="w-4 h-4" />
-          View Wedding Day Uploader
+          Back to Home
         </Link>
       </div>
 
