@@ -1,8 +1,28 @@
+import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 
 interface HeroSectionProps {
   tableNumber?: string;
 }
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.18,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
 
 const HeroSection = ({ tableNumber }: HeroSectionProps) => {
   return (
@@ -21,13 +41,6 @@ const HeroSection = ({ tableNumber }: HeroSectionProps) => {
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-light/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky/20 rounded-full blur-3xl" />
 
-      {/* Decorative floating element */}
-      {/* <div className="absolute top-10 left-10 text-blue-light/30 animate-float">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
-          <circle cx="12" cy="12" r="3" opacity="0.3" />
-        </svg>
-      </div> */}
-
       <br />
       <br />
       <br />
@@ -36,42 +49,46 @@ const HeroSection = ({ tableNumber }: HeroSectionProps) => {
       <br />
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 text-center">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        className="relative container mx-auto px-4 text-center"
+      >
+
+        {/* Blinking heart */}
+        <motion.div variants={fadeUp} className="mb-3 flex justify-center">
+          <motion.div
+            animate={{ opacity: [1, 0.25, 1] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Heart className="h-5 w-5 fill-rose-400 text-rose-400" />
+          </motion.div>
+        </motion.div>
 
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display text-foreground mb-4 tracking-tight">
+        <motion.h1
+          variants={fadeUp}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display text-foreground mb-4 tracking-tight"
+        >
           <span className="block text-[20px] font-semibold uppercase tracking-[7px]">
             THE EVENT OF
           </span>
           <span className="block text-gradient-red/50 italic font-[cursive] font-semibold drop-shadow-sm">
             Mr &amp; Mrs
           </span>
-        </h1>
+        </motion.h1>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl text-foreground max-w-2xl mx-auto mb-8 font-regular">
+        <motion.p
+          variants={fadeUp}
+          className="text-lg sm:text-xl text-foreground max-w-2xl mx-auto mb-8 font-regular"
+        >
           Share your cherished moments from this beautiful celebration.
           Every photo tells a story of love and joy.
-        </p>
+        </motion.p>
 
-        {/* Table number */}
-        {tableNumber && (
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-card rounded-full border border-red/20 shadow-soft">
-            <span className="text-sm text-muted-foreground">You're at</span>
-            <span className="text-lg font-display font-semibold text-red">
-              Table {tableNumber}
-            </span>
-          </div>
-        )}
-
-        {/* Bottom dots */}
-        <div className="flex items-center justify-center gap-2 mt-10">
-          <div className="w-2 h-2 rounded-full bg-red/30" />
-          <div className="w-3 h-3 rounded-full bg-red/50" />
-          <div className="w-2 h-2 rounded-full bg-red/30" />
-        </div>
-
-      </div>
+      </motion.div>
     </section>
   );
 };
