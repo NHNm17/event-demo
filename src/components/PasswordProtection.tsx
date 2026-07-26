@@ -9,7 +9,7 @@ interface PasswordProtectionProps {
 }
 
 // Owner password - in a real app this would be stored securely
-const OWNER_PASSWORD = "ADISHA1999";
+const OWNER_PASSWORD = "Plm";
 
 const PasswordProtection = ({ onAuthenticated }: PasswordProtectionProps) => {
   const [password, setPassword] = useState("");
