@@ -88,7 +88,7 @@ const PhotoUpload = ({ onUploadComplete, tableNumber, eventType }: PhotoUploadPr
   "Photo uploaded successfully! 💍✨\nThank you for sharing your moment and for being part of our wedding day.",
   {
     position: "top-center",
-    duration: 10000, // 10 seconds
+    duration: 5000, // 5 seconds
     className: `
       !bg-black/90 backdrop-blur-md
       !text-white
