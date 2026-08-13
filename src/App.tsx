@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useLocation, BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Home from "./pages/Home";
 import Wedding from "./pages/Wedding";
 import Homecoming from "./pages/Homecoming";
@@ -10,6 +11,7 @@ import ThankYouCard from "./pages/ThankYouCard";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 import { AnimatePresence, motion, Variants } from "framer-motion";
+import CurtainIntro from "@/components/CurtainIntro";
 
 const queryClient = new QueryClient();
 
@@ -72,17 +74,22 @@ const AnimatedRoutes = () => {
   );
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <AnimatedRoutes />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  const [showCurtain, setShowCurtain] = useState(true);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        {showCurtain && <CurtainIntro onDone={() => setShowCurtain(false)} />}
+        <BrowserRouter>
+          <ScrollToTop />
+          <AnimatedRoutes />
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
