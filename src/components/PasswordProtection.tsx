@@ -41,7 +41,7 @@ const PasswordProtection = ({ onAuthenticated }: PasswordProtectionProps) => {
           </div>
           
           <h1 className="text-2xl font-display font-semibold text-foreground mb-2">
-            Protected Gallery
+            Secure Gallery
           </h1>
           <p className="text-muted-foreground mb-6">
             Enter the password to view and manage photos
